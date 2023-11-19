@@ -8,28 +8,13 @@ const router = createRouter({
             path: '/',
             component: Home
         },
-      
         {
-            path: '/brazil',
-            name: 'brazil',
-            component: () => import("@/pages/Brazil.vue")
-        },
-        {
-            path: '/panama',
-            name: 'panama',
-            component:()=> import("@/pages/Panama.vue")
-        },
-        {
-            path: '/hawaii',
-            name: 'hawaii',
-            component: () => import("@/pages/Hawaii.vue")
-        },
-        {
-            path: '/jamaica',
-            name: 'jamaica',
-            component: ()=> import("@/pages/About.vue")
+            path: '/destination/:id',
+            name: 'destination.details',
+            component: () => import("@/pages/DestinationDetails.vue")
         }
-    ]
+    ],
+    linkActiveClass: 'font-bold underline'
 });
 
 export default router;

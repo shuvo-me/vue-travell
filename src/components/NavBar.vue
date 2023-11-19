@@ -7,28 +7,12 @@
             Home
           </router-link>
         </li>
-        <li>
-          <router-link class="text-white" to="/brazil" active-class="font-bold">
-            Brazil
-          </router-link>
-        </li>
-        <li>
-          <router-link class="text-white" to="/hawaii" active-class="font-bold">
-            Hawaii
-          </router-link>
-        </li>
-        <li>
+        <li v-for="destination in destinations" :key="destination.name">
           <router-link
-            class="text-white"
-            to="/jamaica"
-            active-class="font-bold"
+            class="text-white capitalize"
+            :to="`/destination/${destination.id}`"
           >
-            Jamaica
-          </router-link>
-        </li>
-        <li>
-          <router-link class="text-white" to="/panama" active-class="font-bold">
-            Panama
+            {{ destination.name }}
           </router-link>
         </li>
       </ul>
@@ -37,6 +21,8 @@
 </template>
 
 <script setup>
+import data from "@/data.json";
+const destinations = data.destinations;
 </script>
 
 <style scoped>
